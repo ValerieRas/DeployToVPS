@@ -57,8 +57,8 @@
     Utilise la commande `docker cp` pour copier le fichier depuis ton système local vers le conteneur PostgreSQL.
     
     ```bash
-    bashCopier le code
-    docker cp /home/ton-utilisateur/scripts/init.sql postgres-db:/init.sql
+  
+    sudo docker cp /home/ton-utilisateur/scripts/init.sql postgres-db:/init.sql
     
     ```
     
@@ -67,8 +67,8 @@
     Ensuite, tu exécutes le script SQL à l'intérieur du conteneur avec la commande `docker exec`.
     
     ```bash
-    bashCopier le code
-    docker exec -i postgres-db psql -U user -d mydatabase -f /init.sql
+   
+    sudo docker exec -i postgres-db psql -U user -d mydatabase -f /init.sql
     
     ```
     
