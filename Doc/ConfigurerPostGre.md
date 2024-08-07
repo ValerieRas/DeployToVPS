@@ -48,39 +48,27 @@
 
 ### 4. **Utiliser des Scripts SQL pour créer les tables et initialiser les données**
 
-1. **Crée un fichier SQL avec tes commandes :** Par exemple, `init.sql` :
+- **Créer le Fichier SQL Localement :**
     
-    ```sql
+    Place le fichier `init.sql` dans un répertoire sur ton système local, par exemple `/home/ton-utilisateur/scripts/init.sql`.
     
-    CREATE TABLE users (
-      id SERIAL PRIMARY KEY,
-      username VARCHAR(50) UNIQUE NOT NULL,
-      email VARCHAR(100) UNIQUE NOT NULL,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
+- **Copier le Fichier SQL dans le Conteneur :**
     
-    INSERT INTO users (username, email) VALUES
-    ('alice', 'alice@example.com'),
-    ('bob', 'bob@example.com');
+    Utilise la commande `docker cp` pour copier le fichier depuis ton système local vers le conteneur PostgreSQL.
+    
+    ```bash
+    bashCopier le code
+    docker cp /home/ton-utilisateur/scripts/init.sql postgres-db:/init.sql
     
     ```
     
-2. **Utilise le conteneur PostgreSQL pour exécuter ce fichier SQL :**
+- **Exécuter le Script SQL depuis le Conteneur :**
     
-    Tu peux utiliser le conteneur PostgreSQL pour exécuter des scripts SQL en montant un volume local contenant tes fichiers SQL.
+    Ensuite, tu exécutes le script SQL à l'intérieur du conteneur avec la commande `docker exec`.
     
-    - **Copie le fichier SQL dans le conteneur :**
-        
-        ```bash
-        
-        sudo docker cp init.sql postgres-db:/init.sql
-        
-        ```
-        
-    - **Exécute le fichier SQL depuis le conteneur :**
-  
-        ```bash
-        
-        sudo docker exec -i postgres-db psql -U user -d mydatabase -f /init.sql
-        
-        ```
+    ```bash
+    bashCopier le code
+    docker exec -i postgres-db psql -U user -d mydatabase -f /init.sql
+    
+    ```
+    
