@@ -16,7 +16,7 @@ docker --version
 
 - **Si pas de Docker installer sur la machine** :
   
-  [Configuration de PostGre](Doc/configurerPostGre.md)
+  [Configuration de PostGre](Doc/ConfigurerPostGre.md)
 
 - **Mise en place de la CI**
 
