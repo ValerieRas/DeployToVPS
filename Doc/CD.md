@@ -7,8 +7,8 @@ Avant de mettre en place le CD, assure-toi que PostgreSQL est installé et confi
 Si PostgreSQL n'est pas encore en cours d'exécution sur ton VPS, lance-le avec la commande suivante :
 
 ```bash
-bashCopier le code
-docker run -d \
+
+sudo docker run -d \
   --name postgres-db \
   -e POSTGRES_DB=mydatabase \
   -e POSTGRES_USER=user \
