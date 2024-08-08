@@ -14,6 +14,10 @@ docker --version
   
   [Installation Docker](Doc/InstallationDocker.md)
 
+- **Lignes de commande docker**:
+
+  [Lignes de commande docker](Doc/docker.md)
+
 - **Configuration de postGre et initialisation de la BDD** :
   
   [Configuration de PostGre](Doc/ConfigurerPostGre.md)
