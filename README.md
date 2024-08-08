@@ -10,11 +10,11 @@ ssh -p [port] [utilisateur]@[adresse_IP_du_VPS]
 ```powershell
 docker --version
 ```
-- **Si pas de Docker installer sur la machine** :
+- **Si Docker n'est pas installé sur la machine** :
   
   [Installation Docker](Doc/InstallationDocker.md)
 
-- **Si pas de Docker installer sur la machine** :
+- **Configuration de postGre et initialisation de la BDD** :
   
   [Configuration de PostGre](Doc/ConfigurerPostGre.md)
 
