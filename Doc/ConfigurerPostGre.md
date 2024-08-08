@@ -44,7 +44,44 @@
     - **`h localhost`** : Adresse du serveur PostgreSQL (ici localhost car le client et le serveur sont sur le même VPS).
     - **`U user`** : Nom d’utilisateur pour se connecter.
     - **`d mydatabase`** : Nom de la base de données à laquelle se connecter.
-2. **Si tu n’as pas `psql` installé sur ton VPS, tu peux utiliser un client PostgreSQL comme pgAdmin ou DBeaver pour te connecter à l’adresse `localhost` sur le port `5432`.**
+
+2. **Si la BDD n'est pas encore créée**
+   - **Se Connecter au Conteneur PostgreSQL**
+    
+    Si la base de données n’existe pas encore, tu dois d’abord te connecter à PostgreSQL avec l’utilisateur `postgres` :
+    
+    ```bash
+    
+    sudo docker exec -it postgres-db psql -U postgres
+    
+    ```
+    
+    L'utilisateur `postgres` a des privilèges suffisants pour créer des bases de données.
+    
+- **Créer une Nouvelle Base de Données**
+    
+    Une fois connecté à PostgreSQL en tant qu'utilisateur `postgres`, crée la nouvelle base de données avec le fichier init.sql (voir etape 4):
+    
+    ```sql
+    
+    CREATE DATABASE mynewdatabase;
+    
+    ```
+    
+    Remplace `mynewdatabase` par le nom de la base de données que tu souhaites créer.
+    
+- **Se Connecter à la Nouvelle Base de Données**
+    
+    Après avoir créé la base de données, connecte-toi à celle-ci pour créer des tables et insérer des données avec le fichier init.sql (voir étape4):
+    
+    ```sql
+    
+    \c mynewdatabase
+    
+    ```
+    
+    Maintenant que tu es connecté à `mynewdatabase`, tu peux exécuter les commandes SQL nécessaires pour créer des tables et insérer des données.
+3. **Si tu n’as pas `psql` installé sur ton VPS, tu peux utiliser un client PostgreSQL comme pgAdmin ou DBeaver pour te connecter à l’adresse `localhost` sur le port `5432`.**
 
 ### 4. **Utiliser des Scripts SQL pour créer les tables et initialiser les données**
 
