@@ -15,20 +15,6 @@ Si `psql` n’est pas encore installé sur ton système, voici comment le faire 
     
     ```
     
-- **Sous macOS :**
-    
-    Utilise Homebrew :
-    
-    ```bash
-    
-    brew install postgresql
-    
-    ```
-    
-- **Sous Windows :**
-    
-    Télécharge et installe PostgreSQL depuis [le site officiel](https://www.postgresql.org/download/windows/), ce qui inclut `psql`.
-    
 
 ### **2. Connexion à une Base de Données**
 
