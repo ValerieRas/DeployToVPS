@@ -10,7 +10,7 @@
       -e POSTGRES_USER=user \
       -e POSTGRES_PASSWORD=password \
       -p 5432:5432 \
-      -v pgdata:/var/lib/postgresql/data \
+      -v pgdata:/var/lib/postgresql/15/main \
       postgres:latest
     
     ```
@@ -19,6 +19,9 @@
     - `e POSTGRES_USER` : Crée un utilisateur nommé `user`.
     - `e POSTGRES_PASSWORD` : Définit le mot de passe de l'utilisateur `user`.
     - `p 5432:5432` : Expose le port PostgreSQL à ton VPS.
+    - `-v pgdata:` : Nom du volumn ppour la persistence des données -> chercher dans le fichier de config de postgresql le champs data-directory pour savoir où postgre garde les data
+    - Pour ouvrir le fichier sur le VPS : sudo nano /etc/postgresql/12/main/postgresql.conf (chemain peut changer à vérifier sur votre machine)
+
 
   **BIEN garder les user, password et nom de BDD pour pouvoir se connecter plus tard**
   
