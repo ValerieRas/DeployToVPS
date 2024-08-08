@@ -10,7 +10,7 @@
       -e POSTGRES_USER=user \
       -e POSTGRES_PASSWORD=userpassword \
       -p 5432:5432 \
-      postgres:13
+      postgres:latest
     
     ```
     
