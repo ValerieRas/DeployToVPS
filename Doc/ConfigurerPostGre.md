@@ -34,8 +34,6 @@
 
 ### 2. **Se Connecter à PostgreSQL**
 
-[Comment utiliser psql.](psql.md)
-
 1. **Utilise le client `psql` depuis ton VPS ou un autre client PostgreSQL pour se connecter :**
     
     Si tu as `psql` installé sur ton VPS, tu peux te connecter directement au conteneur :
@@ -50,7 +48,9 @@
     - **`U user`** : Nom d’utilisateur pour se connecter.
     - **`d mydatabase`** : Nom de la base de données à laquelle se connecter.
 
+[Comment utiliser psql.](psql.md)
 
+Si on utilise pas psql on peut aussi utiliser le script init.sql
 ### 4. **Utiliser des Scripts SQL pour créer les tables et initialiser les données**
 
 - **Créer le Fichier SQL Localement :**
