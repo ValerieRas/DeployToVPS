@@ -6,9 +6,9 @@
     
     sudo docker run -d \
       --name postgres-db \
-      -e POSTGRES_DB=mydatabase \
+      -e POSTGRES_DB=my_dataBase \
       -e POSTGRES_USER=user \
-      -e POSTGRES_PASSWORD=userpassword \
+      -e POSTGRES_PASSWORD=password \
       -p 5432:5432 \
       postgres:latest
     
@@ -18,6 +18,8 @@
     - `e POSTGRES_USER` : Crée un utilisateur nommé `user`.
     - `e POSTGRES_PASSWORD` : Définit le mot de passe de l'utilisateur `user`.
     - `p 5432:5432` : Expose le port PostgreSQL à ton VPS.
+
+  **BIEN garder les user, password et nom de BDD pour pouvoir se connecter plus tard**
   
 2. **Vérifie que le conteneur PostgreSQL est en cours d'exécution :**
     
@@ -47,43 +49,6 @@
     - **`h localhost`** : Adresse du serveur PostgreSQL (ici localhost car le client et le serveur sont sur le même VPS).
     - **`U user`** : Nom d’utilisateur pour se connecter.
     - **`d mydatabase`** : Nom de la base de données à laquelle se connecter.
-
-2. **Si la BDD n'est pas encore créée**
-   - **Se Connecter au Conteneur PostgreSQL**
-    
-    Si la base de données n’existe pas encore, tu dois d’abord te connecter à PostgreSQL avec l’utilisateur `postgres` :
-    
-    ```bash
-    
-    sudo docker exec -it postgres-db psql -U postgres
-    
-    ```
-    
-    L'utilisateur `postgres` a des privilèges suffisants pour créer des bases de données.
-    
-- **Créer une Nouvelle Base de Données**
-    
-    Une fois connecté à PostgreSQL en tant qu'utilisateur `postgres`, crée la nouvelle base de données avec le fichier init.sql (voir etape 4):
-    
-    ```sql
-    
-    CREATE DATABASE mynewdatabase;
-    
-    ```
-    
-    Remplace `mynewdatabase` par le nom de la base de données que tu souhaites créer.
-    
-- **Se Connecter à la Nouvelle Base de Données**
-    
-    Après avoir créé la base de données, connecte-toi à celle-ci pour créer des tables et insérer des données avec le fichier init.sql (voir étape4):
-    
-    ```sql
-    
-    \c mynewdatabase
-    
-    ```
-    
-    Maintenant que tu es connecté à `mynewdatabase`, tu peux exécuter les commandes SQL nécessaires pour créer des tables et insérer des données.
 
 
 ### 4. **Utiliser des Scripts SQL pour créer les tables et initialiser les données**
