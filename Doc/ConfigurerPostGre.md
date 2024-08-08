@@ -81,7 +81,7 @@
     ```
     
     Maintenant que tu es connecté à `mynewdatabase`, tu peux exécuter les commandes SQL nécessaires pour créer des tables et insérer des données.
-3. **Si tu n’as pas `psql` installé sur ton VPS, tu peux utiliser un client PostgreSQL comme pgAdmin ou DBeaver pour te connecter à l’adresse `localhost` sur le port `5432`.**
+
 
 ### 4. **Utiliser des Scripts SQL pour créer les tables et initialiser les données**
 
