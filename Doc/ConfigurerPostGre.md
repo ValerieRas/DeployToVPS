@@ -32,7 +32,7 @@
 
 ### 2. **Se Connecter à PostgreSQL**
 
-[Comment utiliser psql.](Doc/psql.md)
+[Comment utiliser psql.](psql.md)
 
 1. **Utilise le client `psql` depuis ton VPS ou un autre client PostgreSQL pour se connecter :**
     
