@@ -10,7 +10,7 @@
       -e POSTGRES_USER=user \
       -e POSTGRES_PASSWORD=password \
       -p 5432:5432 \
-      -v pgdata:/var/lib/postgresql/15/main \
+      -v pgdata:/var/lib/postgresql/data \
       postgres:latest
     
     ```
@@ -19,8 +19,7 @@
     - `e POSTGRES_USER` : Crée un utilisateur nommé `user`.
     - `e POSTGRES_PASSWORD` : Définit le mot de passe de l'utilisateur `user`.
     - `p 5432:5432` : Expose le port PostgreSQL à ton VPS.
-    - `-v pgdata:` : Nom du volume pour la persistence des données -> chercher dans le fichier de config de postgresql le champs data-directory pour savoir où postgre garde les datas
-    - sudo -u postgres psql -c "SHOW data_directory;"
+    - `-v pgdata:` : Nom du volume pour la persistence des données 
 
 
 
