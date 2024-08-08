@@ -18,6 +18,7 @@
     - `e POSTGRES_USER` : Crée un utilisateur nommé `user`.
     - `e POSTGRES_PASSWORD` : Définit le mot de passe de l'utilisateur `user`.
     - `p 5432:5432` : Expose le port PostgreSQL à ton VPS.
+  
 2. **Vérifie que le conteneur PostgreSQL est en cours d'exécution :**
     
     ```bash
@@ -30,6 +31,8 @@
     
 
 ### 2. **Se Connecter à PostgreSQL**
+
+[Comment utiliser psql.](Doc/psql.md)
 
 1. **Utilise le client `psql` depuis ton VPS ou un autre client PostgreSQL pour se connecter :**
     
